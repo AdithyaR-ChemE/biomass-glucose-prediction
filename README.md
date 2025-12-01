@@ -53,6 +53,12 @@ seaborn
 | R7–S1–D2 | Horn et al. (2011) | Steam explosion pretreatment with high severity factor | 492.1 | XGBoost Test – abnormal sugar loss not captured by model |
 | R2–S2–D5 | Kang et al. (2025) | Feedstock heterogeneity (aged biomass) | 140 | Both Models (Test) – underperformance not reflected in model inputs |
 
+## Contributors
+- Adithya Ramanakumar
+- Nahesware A C
+- Dharani Dharan
+
+
 
 ## Results & Insights
 • CatBoost delivered the strongest performance with the highest R² score and lowest RMSE among the three models, showing better generalization across diverse biomass conditions.  

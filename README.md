@@ -76,6 +76,14 @@ CatBoost shows better generalization with lower validation RMSE and higher fold 
 • Across all methods, enzyme identity, hydrolysis time, pH, and pretreatment severity consistently emerged as the most influential factors controlling glucose yield.  
 • These results demonstrate how ML models can reliably screen process conditions and identify key variables without relying solely on exhaustive laboratory experiments.
 
+## Dataset Source
+The dataset used in this project was curated from published experimental studies on lignocellulosic biomass hydrolysis and glucose yield.  
+It is available in this repository:
+
+**Dataset:** [Harvard Dataverse Dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E7ADVM)
+
+**Literature Review & Bibliography:** [Download Literature Review & Bibliography.xlsx](https://github.com/AdithyaR-ChemE/biomass-glucose-prediction/blob/main/Literature%20Review%20%26%20Bibliography.xlsx)
+
 ## Contributors
 - Adithya Ramanakumar
 - Nahesware A C

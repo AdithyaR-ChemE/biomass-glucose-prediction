@@ -45,6 +45,23 @@ seaborn
 | XGBoost   | 0.938    | 0.900   | 7.03%        | 8.93%       | 1.90       | Slightly more overfitting, good performance |
 | SVR       | 0.880    | 0.701   | 9.82%        | 15.45%      | 5.63       | High overfitting, poor generalization |
 
+## Cross-Validation Summary
+XGBoost and CatBoost were evaluated using 5-fold cross-validation on the 533-sample biomass-to-glucose dataset (426 train / 107 validation per fold), providing robust generalization beyond a single split.
+
+### Performance Metrics
+
+| Model    | Train RMSE (mean ± std) | Val RMSE (mean ± std) | Overfitting Gap |
+|----------|-------------------------|-----------------------|-----------------|
+| XGBoost  |	6.91 ± 0.15	           | 10.28 ± 0.93          | 3.36	           |
+| CatBoost |	6.87 ± 0.41	           | 9.08 ± 0.56           | 2.22            |
+
+CatBoost shows better generalization with lower validation RMSE and higher fold consistency.
+
+### Key Insights
+• Expected real-world RMSE: CatBoost ~9.08, XGBoost ~10.28
+• Both show moderate overfitting (2–3 RMSE gap) but remain stable across folds
+• Final full-data models are optimistic: XGBoost 7.05 RMSE, CatBoost 6.94 RMSE
+
 ## Outliers
 
 | Sample ID | Reference | Feature(s) Highlighted | APE (%) | Notes |
@@ -52,6 +69,7 @@ seaborn
 | R3–S4–D1 | Soudham et al. (2015) | No pretreatment | ∞ | Failed hydrolysis – Reed Canary Grass does not produce glucose without pretreatment |
 | R7–S1–D2 | Horn et al. (2011) | Steam explosion pretreatment with high severity factor | 492.1 | XGBoost Test – abnormal sugar loss not captured by model |
 | R2–S2–D5 | Kang et al. (2025) | Feedstock heterogeneity (aged biomass) | 140 | Both Models (Test) – underperformance not reflected in model inputs |
+
 
 ## Contributors
 - Adithya Ramanakumar
@@ -61,6 +79,8 @@ seaborn
 
 
 ## Results & Insights
-• CatBoost delivered the strongest performance with the highest R² score and lowest RMSE among the three models, showing better generalization across diverse biomass conditions.  
+• CatBoost delivered the strongest performance with the highest R² and lowest RMSE among the three models, showing better generalization across diverse biomass conditions.
+• Cross-validation results indicate stable performance across data splits, with CatBoost exhibiting lower validation RMSE and reduced overfitting compared to XGBoost.  
 • Across all methods, enzyme identity, hydrolysis time, pH, and pretreatment severity consistently emerged as the most influential factors controlling glucose yield.  
-• These results show how ML models can rapidly screen process conditions and identify key variables without relying solely on exhaustive laboratory experiments.
+• These results demonstrate how ML models can reliably screen process conditions and identify key variables without relying solely on exhaustive laboratory experiments.
+
